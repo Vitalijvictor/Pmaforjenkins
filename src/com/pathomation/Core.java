@@ -342,7 +342,6 @@ public class Core {
 	 *
 	 * @param pmaCoreURL default value(Class field pmaCoreLiteURL), url of
 	 *                      PMA.core instance
->
 	 * @return Checks if there is a PMA.core.lite or PMA.core instance running
 	 */
 	public static Boolean isLite(String pmaCoreURL) {

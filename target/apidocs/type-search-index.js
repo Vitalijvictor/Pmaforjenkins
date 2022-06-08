@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"com.pathomation","l":"Control"},{"p":"com.pathomation","l":"Control.PmaTrainingSessionRole"},{"p":"com.pathomation","l":"Core"},{"p":"com.pathomation","l":"CoreAdmin"},{"p":"com.pathomation","l":"PMA"},{"p":"com.pathomation.UI","l":"UI"},{"p":"com.pathomation","l":"View"}]

@@ -8,8 +8,19 @@ pipeline {
     }
 
     stage('Windows Tests') {
-      steps {
-        echo 'Run Windows tests'
+      parallel {
+        stage('Windows Tests') {
+          steps {
+            echo 'Run Windows tests'
+          }
+        }
+
+        stage('Linux Tests') {
+          steps {
+            echo 'Linux'
+          }
+        }
+
       }
     }
 
@@ -23,6 +34,16 @@ pipeline {
       steps {
         echo 'Deploy to Prod'
       }
+    }
+
+  }
+  post {
+    always {
+      archiveArtifacts(artifacts: 'target/demoapp.jar', fingerprint: true)
+    }
+
+    failure {
+      mail(to: 'vitalij@pathomation.com', subject: "Failed Pipeline ${currentBuild.fullDisplayName}", body: " For details about the failure, see ${env.BUILD_URL}")
     }
 
   }

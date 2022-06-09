@@ -9,21 +9,9 @@ pipeline {
       }
     }
 
-    stage('Linux Tests') {
-      parallel {
-        stage('Shell Script') {
-          steps {
-            echo 'Run Linux tests '
-            sh 'sh run_linux_tests.sh'
-          }
-        }
-
-        stage('Windows Tests') {
-          steps {
-            echo 'Run Windows tests'
-          }
-        }
-
+    stage('Windows Tests') {
+      steps {
+        echo 'Run Windows tests'
       }
     }
 
